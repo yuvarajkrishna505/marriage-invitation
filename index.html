@@ -852,6 +852,90 @@
     .success-badge p { font-size: 0.83rem; color: rgba(255,255,255,.6); margin-bottom: 4px; }
     .success-badge strong { color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
 
+    /* ─── FEEDBACK ──────────────────────────────────────────────────── */
+    #feedback {
+      padding: 88px 0;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    #feedback::before {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(14,170,115,.1), transparent 70%);
+      pointer-events: none;
+    }
+    .feedback-wrap {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      box-shadow: var(--shadow);
+    }
+    .feedback-wrap label {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .feedback-wrap textarea {
+      width: 100%;
+      background: #f7fbf9;
+      border: 1px solid rgba(14,170,115,.2);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      resize: none;
+      outline: none;
+      transition: border-color .25s, box-shadow .25s;
+      line-height: 1.65;
+    }
+    .feedback-wrap textarea::placeholder { color: rgba(107,128,112,.45); }
+    .feedback-wrap textarea:focus {
+      border-color: var(--green-light);
+      box-shadow: 0 0 0 3px rgba(14,170,115,.1);
+    }
+    .btn-feedback {
+      width: 100%;
+      background: var(--green-light);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 16px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: background .25s, transform .25s, box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(14,170,115,.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-feedback:hover {
+      background: #0c9465;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(14,170,115,.45);
+    }
+    #feedback-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    #feedback-success .success-circle { margin-bottom: 20px; }
+    #feedback-success h3 { font-size: 1.8rem; color: var(--dark); font-weight: 600; margin-bottom: 8px; }
+    #feedback-success p { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+
     /* ─── FOOTER ────────────────────────────────────────────────────── */
     footer {
       background: var(--dark);
@@ -934,7 +1018,7 @@
       <li><a href="#event-details">Details</a></li>
       <li><a href="#venue">Venue</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#rsvp">RSVP</a></li>
+      <li><a href="#feedback">Message</a></li>
     </ul>
   </nav>
 
@@ -1098,104 +1182,33 @@
     </button>
   </div>
 
-  <!-- ── RSVP ──────────────────────────────────────────────────────── -->
-  <section id="rsvp">
+
+
+  <!-- ── FEEDBACK ─────────────────────────────────────────────────── -->
+  <section id="feedback">
     <div class="container">
       <div class="section-title reveal">
-        <p>Join us on our special day</p>
-        <h2>RSVP</h2>
-        <div class="gold-line" style="background: linear-gradient(90deg,#0eaa73,#4dd8a7,#0eaa73);"></div>
+        <p>Words from the heart</p>
+        <h2>Send a Message</h2>
+        <div class="gold-line"></div>
       </div>
-      <div class="rsvp-form-wrap reveal">
-
-        <form id="rsvp-form" onsubmit="submitRSVP(event)">
-
-          <!-- Name -->
-          <div class="form-group">
-            <label for="fname">Full Name *</label>
-            <input type="text" id="fname" required placeholder="Your full name"/>
+      <div class="feedback-wrap reveal">
+        <form id="feedback-form" onsubmit="submitFeedback(event)">
+          <div style="margin-bottom:20px;">
+            <label for="feedback-msg">Message to the Couple 💌</label>
+            <textarea id="feedback-msg" rows="6" placeholder="Share your wishes, memories, or words of love..."></textarea>
           </div>
-
-          <!-- Guests -->
-          <div class="form-group">
-            <label for="guests">Number of Guests *</label>
-            <select id="guests" required>
-              <option value="" disabled selected>Select number of guests</option>
-              <option value="1">1 — Just me</option>
-              <option value="2">2 — Myself + 1</option>
-              <option value="3">3 — Myself + 2</option>
-              <option value="4">4 — Myself + 3</option>
-            </select>
-          </div>
-
-          <!-- Attendance -->
-          <div class="form-group">
-            <label>Will you attend? *</label>
-            <div class="attend-toggle">
-              <label class="attend-option">
-                <input type="radio" name="attend" value="yes" required/>
-                <div class="attend-card">
-                  <div class="attend-icon">🥂</div>
-                  <p>Joyfully Accept</p>
-                  <small>I'll be there!</small>
-                </div>
-              </label>
-              <label class="attend-option">
-                <input type="radio" name="attend" value="no"/>
-                <div class="attend-card">
-                  <div class="attend-icon">💌</div>
-                  <p>Regretfully Decline</p>
-                  <small>Can't make it</small>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <!-- Meal -->
-          <div class="form-group">
-            <label>Meal Preference</label>
-            <div class="meal-options">
-              <label class="meal-opt">
-                <input type="radio" name="meal" value="standard"/>
-                <div class="meal-card">
-                  <span class="meal-emoji">🍽️</span>
-                  <span>Standard</span>
-                </div>
-              </label>
-              <label class="meal-opt">
-                <input type="radio" name="meal" value="vegetarian"/>
-                <div class="meal-card">
-                  <span class="meal-emoji">🥗</span>
-                  <span>Vegetarian</span>
-                </div>
-              </label>
-              <label class="meal-opt">
-                <input type="radio" name="meal" value="vegan"/>
-                <div class="meal-card">
-                  <span class="meal-emoji">🌱</span>
-                  <span>Vegan</span>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <button type="submit" class="btn-submit">
-            <span class="material-symbols-outlined" style="font-size:20px;">check_circle</span>
-            Confirm Attendance
+          <button type="submit" class="btn-feedback" id="feedback-btn">
+            <span class="material-symbols-outlined" style="font-size:20px;">send</span>
+            Send Feedback
           </button>
         </form>
-
-        <!-- Success -->
-        <div id="rsvp-success">
+        <div id="feedback-success">
           <div class="success-circle">
             <span class="material-symbols-outlined msym">favorite</span>
           </div>
-          <h3>You're Confirmed!</h3>
-          <p>Thank you! We're so excited to celebrate with you.</p>
-          <div class="success-badge">
-            <p>See you on</p>
-            <strong>May 9, 2026 · Vellur, Kerala</strong>
-          </div>
+          <h3>Message Sent!</h3>
+          <p>Thank you for your kind words. We cherish every one of them. 💚</p>
         </div>
       </div>
     </div>
@@ -1259,16 +1272,16 @@
       if (e.target === this) closeLb();
     });
 
-    /* ── RSVP submit ── */
-    function submitRSVP(e) {
+    /* ── Feedback submit ── */
+    function submitFeedback(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('.btn-submit');
+      const btn = document.getElementById('feedback-btn');
       btn.innerHTML = '<div style="width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite;"></div>';
       btn.disabled = true;
       setTimeout(() => {
-        document.getElementById('rsvp-form').style.display = 'none';
-        document.getElementById('rsvp-success').style.display = 'block';
-        document.getElementById('rsvp-success').style.animation = 'fadeInUp .6s ease forwards';
+        document.getElementById('feedback-form').style.display = 'none';
+        document.getElementById('feedback-success').style.display = 'block';
+        document.getElementById('feedback-success').style.animation = 'fadeInUp .6s ease forwards';
       }, 1400);
     }
   </script>
