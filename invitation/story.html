@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Our Story — Amara & Julian's Wedding</title>
+  <meta name="description" content="How Amara and Julian met, fell in love, and journeyed together to forever."/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0eaa73",
+            "accent": "#d4af37",
+            "background-dark": "#0a1a15",
+          },
+          fontFamily: {
+            "display": ["Noto Serif", "serif"],
+            "sans": ["Noto Sans", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .glass {
+      background: rgba(14, 170, 115, 0.07);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #d4af37 100%);
+    }
+    .gold-text {
+      background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(212,175,55,0.4), rgba(14,170,115,0.4), transparent);
+      transform: translateX(-50%);
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim-in { animation: fadeInUp 0.6s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.25s; opacity: 0; }
+    body { min-height: max(884px, 100dvh); }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0a1a15; }
+    ::-webkit-scrollbar-thumb { background: #0eaa73; border-radius: 2px; }
+  </style>
+</head>
+<body class="bg-background-dark font-sans text-slate-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-5 py-4 sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+    <a href="index.html" class="flex items-center gap-3 no-underline text-slate-100 hover:opacity-80 transition-opacity">
+      <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center border border-accent/30">
+        <span class="material-symbols-outlined text-accent text-lg" style="font-variation-settings:'FILL' 1;">favorite</span>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold tracking-tight leading-none">A &amp; J</h1>
+        <p class="text-[10px] text-primary uppercase tracking-[0.2em] font-semibold leading-none mt-0.5">Wedding</p>
+      </div>
+    </a>
+    <nav class="flex items-center gap-2">
+      <a href="details.html" class="text-xs text-slate-400 hover:text-slate-200 px-3 py-1.5 rounded-full hover:bg-white/5 transition-all">Details</a>
+      <a href="story.html" class="text-xs text-primary font-semibold px-3 py-1.5 rounded-full bg-primary/15 border border-primary/30">Story</a>
+      <a href="gallery.html" class="text-xs text-slate-400 hover:text-slate-200 px-3 py-1.5 rounded-full hover:bg-white/5 transition-all">Gallery</a>
+      <a href="rsvp.html" class="text-xs text-slate-400 hover:text-slate-200 px-3 py-1.5 rounded-full hover:bg-white/5 transition-all">RSVP</a>
+    </nav>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-4 pb-16">
+
+    <!-- Page Title -->
+    <div class="text-center py-10 anim-in delay-1">
+      <span class="material-symbols-outlined text-accent text-4xl mb-3 block" style="font-variation-settings:'FILL' 1;">favorite</span>
+      <h2 class="text-3xl font-display font-bold gold-text">Our Story</h2>
+      <p class="font-display italic text-slate-400 mt-2 text-base">A love written in the stars</p>
+      <div class="h-0.5 w-16 gold-gradient mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- Intro Quote -->
+    <div class="glass rounded-2xl p-8 text-center mb-10 anim-in delay-2">
+      <p class="font-display italic text-lg text-slate-200 leading-relaxed">
+        "Two hearts, one story — a lifetime of moments that led us here."
+      </p>
+      <p class="text-primary text-sm mt-4 font-semibold">— Amara &amp; Julian</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="space-y-6 pb-6">
+
+      <!-- Item 1 -->
+      <div class="flex gap-4 items-start group">
+        <div class="flex flex-col items-center">
+          <div class="size-12 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors duration-300">
+            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">waving_hand</span>
+          </div>
+          <div class="w-px flex-1 bg-gradient-to-b from-primary/30 to-accent/20 mt-2 min-h-8"></div>
+        </div>
+        <div class="glass rounded-2xl p-5 flex-1 mb-2 group-hover:border-accent/30 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-accent text-[10px] uppercase tracking-[0.2em] font-bold">June 2019</span>
+          </div>
+          <h4 class="font-display font-semibold text-base mb-1">The First Meeting</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">We met at a sunlit art gallery in Florence. Julian was sketching a painting, and Amara accidentally spilled her espresso — thankfully not on the canvas. It was awkward, it was funny, it was meant to be.</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="flex gap-4 items-start group">
+        <div class="flex flex-col items-center">
+          <div class="size-12 rounded-full bg-accent/15 border-2 border-accent/40 flex items-center justify-center flex-shrink-0 group-hover:border-accent transition-colors duration-300">
+            <span class="material-symbols-outlined text-accent text-lg" style="font-variation-settings:'FILL' 1;">restaurant</span>
+          </div>
+          <div class="w-px flex-1 bg-gradient-to-b from-accent/30 to-primary/20 mt-2 min-h-8"></div>
+        </div>
+        <div class="glass rounded-2xl p-5 flex-1 mb-2 group-hover:border-accent/30 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-accent text-[10px] uppercase tracking-[0.2em] font-bold">December 2019</span>
+          </div>
+          <h4 class="font-display font-semibold text-base mb-1">The First Date</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Six months of glances and letters later, Julian finally asked Amara to dinner at a candlelit trattoria on Christmas Eve. They talked until closing time, and the rest is history.</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="flex gap-4 items-start group">
+        <div class="flex flex-col items-center">
+          <div class="size-12 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center flex-shrink-0 group-hover:border-primary transition-colors duration-300">
+            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings:'FILL' 1;">travel_explore</span>
+          </div>
+          <div class="w-px flex-1 bg-gradient-to-b from-primary/30 to-accent/20 mt-2 min-h-8"></div>
+        </div>
+        <div class="glass rounded-2xl p-5 flex-1 mb-2 group-hover:border-accent/30 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-accent text-[10px] uppercase tracking-[0.2em] font-bold">Summer 2021</span>
+          </div>
+          <h4 class="font-display font-semibold text-base mb-1">Adventures Together</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Greece, Morocco, Portugal — they traveled through 14 countries together, collecting memories, recipes, and inside jokes. Their love grew with every passport stamp.</p>
+        </div>
+      </div>
+
+      <!-- Item 4 — Proposal -->
+      <div class="flex gap-4 items-start group">
+        <div class="flex flex-col items-center">
+          <div class="size-12 rounded-full gold-gradient flex items-center justify-center flex-shrink-0 shadow-lg">
+            <span class="material-symbols-outlined text-background-dark text-lg" style="font-variation-settings:'FILL' 1;">diamond</span>
+          </div>
+          <div class="w-px flex-1 bg-gradient-to-b from-accent/30 to-transparent mt-2 min-h-8"></div>
+        </div>
+        <div class="glass rounded-2xl p-5 flex-1 mb-2 border border-accent/30 hover:border-accent/50 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-accent text-[10px] uppercase tracking-[0.2em] font-bold">April 2024 ✨</span>
+          </div>
+          <h4 class="font-display font-semibold text-base mb-1 gold-text">The Proposal</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">Under the stars at the Amalfi coast, Julian got down on one knee with a ring passed down from his grandmother. With tears and laughter, Amara said yes. The whole restaurant cheered.</p>
+        </div>
+      </div>
+
+      <!-- Item 5 — Wedding -->
+      <div class="flex gap-4 items-start group">
+        <div class="flex flex-col items-center">
+          <div class="size-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-lg shadow-primary/30">
+            <span class="material-symbols-outlined text-white text-lg" style="font-variation-settings:'FILL' 1;">celebration</span>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-5 flex-1 border border-primary/40 hover:border-primary/60 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-primary text-[10px] uppercase tracking-[0.2em] font-bold">August 24, 2025 🎉</span>
+          </div>
+          <h4 class="font-display font-semibold text-base mb-1 text-primary">The Wedding</h4>
+          <p class="text-slate-400 text-sm leading-relaxed">And now we begin the greatest chapter of all — and we couldn't be happier to share this moment with you. Thank you for being part of our love story.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Row -->
+    <div class="grid grid-cols-2 gap-3 pt-4">
+      <a href="gallery.html" class="flex items-center justify-center gap-2 py-4 glass rounded-2xl border border-accent/20 hover:border-accent/40 transition-all no-underline text-slate-100 group">
+        <span class="material-symbols-outlined text-accent group-hover:scale-110 transition-transform" style="font-variation-settings:'FILL' 1;">photo_library</span>
+        <span class="text-sm font-semibold">Our Gallery</span>
+      </a>
+      <a href="rsvp.html" class="flex items-center justify-center gap-2 py-4 bg-primary/20 rounded-2xl border border-primary/40 hover:bg-primary/30 transition-all no-underline text-slate-100 group">
+        <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" style="font-variation-settings:'FILL' 1;">check_circle</span>
+        <span class="text-sm font-semibold">RSVP Now</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

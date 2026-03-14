@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nived P & Dr Aishwarya — Wedding Invitation</title>
+  <meta name="description" content="You are joyfully invited to the wedding of Nived P & Dr Aishwarya on May 9, 2026 at Vellur Sree Kudakkath Kottanacheri Devaswom Auditorium, Kerala." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,1&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #1a6b4a;
+      --green-light:#0eaa73;
+      --green-pale: rgba(14,170,115,.08);
+      --gold:       #c9993a;
+      --gold-light: #e4ba6a;
+      --cream:      #fdf8f0;
+      --dark:       #0c1f17;
+      --dark2:      #122a1e;
+      --text:       #1c2b24;
+      --muted:      #6b8070;
+      --border:     rgba(201,153,58,.22);
+      --glass-bg:   rgba(255,255,255,.55);
+      --glass-dark: rgba(12,31,23,.72);
+      --shadow:     0 8px 32px rgba(12,31,23,.18);
+      --radius:     16px;
+      --radius-sm:  10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    img { display: block; width: 100%; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── Scrollbar ────────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--green-light); border-radius: 2px; }
+
+    /* ─── Utilities ────────────────────────────────────────────────── */
+    .container { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+    .gold-line  { width: 48px; height: 2px; background: linear-gradient(90deg,#c9993a,#e4ba6a,#c9993a); border-radius: 1px; margin: 0 auto; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-title h2 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    /* ─── Fade-in on Scroll ─────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── NAV ───────────────────────────────────────────────────────── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .3s, box-shadow .3s;
+    }
+    #navbar.scrolled {
+      background: rgba(253,248,240,.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 2px 20px rgba(0,0,0,.08);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: white;
+      transition: color .3s;
+    }
+    #navbar.scrolled .nav-brand { color: var(--dark); }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 20px;
+      color: rgba(255,255,255,.85);
+      transition: all .25s;
+    }
+    #navbar.scrolled .nav-links a { color: var(--muted); }
+    .nav-links a:hover {
+      background: rgba(255,255,255,.15);
+      color: white;
+    }
+    #navbar.scrolled .nav-links a:hover {
+      background: var(--green-pale);
+      color: var(--green);
+    }
+
+    /* Mobile nav toggle */
+    #nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    #nav-toggle span { display: block; width: 22px; height: 2px; background: white; border-radius: 1px; margin: 5px 0; transition: background .3s; }
+    #navbar.scrolled #nav-toggle span { background: var(--dark); }
+
+    /* ─── HERO ──────────────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      height: 100dvh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('assets/wedding_bg.png') center/cover no-repeat;
+      transform: scale(1.06);
+      transition: transform 10s ease;
+    }
+    #hero:hover .hero-bg { transform: scale(1.02); }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(12,31,23,.35) 0%,
+        rgba(12,31,23,.18) 45%,
+        rgba(12,31,23,.6) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.75);
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: rgba(255,255,255,.4);
+    }
+    .hero-names {
+      font-size: clamp(3.2rem, 10vw, 5.5rem);
+      font-weight: 600;
+      color: white;
+      line-height: 1.05;
+      text-shadow: 0 2px 30px rgba(0,0,0,.3);
+      margin-bottom: 10px;
+    }
+    .hero-ampersand {
+      color: var(--gold-light);
+      font-style: italic;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 3vw, 1.45rem);
+      color: rgba(255,255,255,.82);
+      margin-bottom: 38px;
+    }
+    .hero-date {
+      font-size: 0.76rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 36px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green-light);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s, background .25s;
+      box-shadow: 0 4px 24px rgba(14,170,115,.45);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(14,170,115,.55);
+      background: #0c9465;
+    }
+    .btn-primary .icon { font-size: 18px; transition: transform .25s; }
+    .btn-primary:hover .icon { transform: translateX(3px); }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    .hero-scroll-hint span { font-size: 0.68rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .hero-scroll-hint .arrow { color: rgba(255,255,255,.5); font-size: 20px; }
+    @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+
+    /* ─── SAVE THE DATE ─────────────────────────────────────────────── */
+    #save-the-date {
+      padding: 88px 0;
+      background: var(--dark2);
+      position: relative;
+      overflow: hidden;
+    }
+    #save-the-date::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(14,170,115,.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #save-the-date::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(201,153,58,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .std-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .std-label {
+      font-size: 0.76rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .std-date {
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 600;
+      color: white;
+      margin-bottom: 36px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+    }
+    .cnt-item {
+      text-align: center;
+      padding: 0 24px;
+    }
+    .cnt-item + .cnt-item { border-left: 1px solid rgba(255,255,255,.1); }
+    .cnt-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 6vw, 3.4rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      display: block;
+    }
+    .cnt-label {
+      font-size: 0.65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-top: 6px;
+      display: block;
+    }
+    .std-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.5);
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    /* ─── EVENT DETAILS ─────────────────────────────────────────────── */
+    #event-details {
+      padding: 88px 0;
+      background: var(--cream);
+    }
+    .event-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .event-card {
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,.05);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .event-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,.1);
+    }
+    .event-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 22px;
+    }
+    .event-icon.green { background: rgba(14,170,115,.12); color: var(--green-light); }
+    .event-icon.gold  { background: rgba(201,153,58,.12); color: var(--gold); }
+    .event-badge {
+      font-size: 0.7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .event-badge.green { color: var(--green-light); }
+    .event-badge.gold  { color: var(--gold); }
+    .event-card h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .event-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .event-divider {
+      width: 32px; height: 1px;
+      background: var(--border);
+      margin: 14px auto;
+    }
+
+    /* ─── VENUE ─────────────────────────────────────────────────────── */
+    #venue {
+      padding: 88px 0;
+      background: #f0f5f2;
+    }
+    .venue-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+    .venue-map-placeholder {
+      height: 200px;
+      background: linear-gradient(135deg, #1a6b4a 0%, #0eaa73 50%, #1a6b4a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .venue-map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/wedding_bg.png') center/cover no-repeat;
+      opacity: .25;
+    }
+    .venue-map-placeholder .map-pin {
+      font-size: 48px;
+      position: relative;
+      z-index: 1;
+      animation: float 3s ease-in-out infinite;
+    }
+    .venue-map-placeholder p {
+      position: relative;
+      z-index: 1;
+      font-size: 0.82rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      opacity: .85;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .venue-body { padding: 32px 28px; }
+    .venue-body h3 {
+      font-size: 1.85rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .venue-body .address {
+      font-size: 0.87rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .venue-details-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .venue-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-pale);
+      border: 1px solid rgba(14,170,115,.2);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 50px;
+    }
+    .venue-tag .msym { font-size: 16px; }
+    .btn-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--dark);
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background .25s, transform .25s;
+    }
+    .btn-map:hover { background: var(--green); transform: translateY(-2px); }
+
+    /* ─── OUR STORY ─────────────────────────────────────────────────── */
+    #our-story {
+      padding: 88px 0;
+      background: var(--cream);
+    }
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 11px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green-light), var(--gold), var(--green-light));
+      border-radius: 1px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      padding-left: 32px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -17px; top: 4px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: white;
+      border: 3px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      transition: transform .3s, border-color .3s;
+    }
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.25);
+      border-color: var(--gold);
+    }
+    .timeline-dot.special { border-color: var(--gold); background: var(--gold); }
+    .timeline-year {
+      font-size: 0.72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .timeline-item:hover .timeline-year { color: var(--gold); }
+    .timeline-card {
+      background: white;
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+      transition: box-shadow .3s, transform .3s;
+    }
+    .timeline-item:hover .timeline-card {
+      box-shadow: 0 6px 24px rgba(0,0,0,.1);
+      transform: translateX(4px);
+    }
+    .timeline-card h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .timeline-card p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ─── GALLERY ───────────────────────────────────────────────────── */
+    #gallery {
+      padding: 88px 0;
+      background: #f0f5f2;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .gallery-grid .span-2 { grid-column: span 2; }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      border: 1px solid var(--border);
+    }
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item.h-200 img { height: 200px; }
+    .gallery-item.h-280 img { height: 280px; }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(12,31,23,.75), transparent 55%);
+      opacity: 0;
+      transition: opacity .3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay p {
+      color: white;
+      font-size: 0.85rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+    }
+    .gallery-zoom {
+      position: absolute;
+      top: 10px; right: 10px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .3s;
+      color: white;
+      font-size: 18px;
+    }
+    .gallery-item:hover .gallery-zoom { opacity: 1; }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.94);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: min(90vw, 780px);
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 0 80px rgba(0,0,0,.6);
+    }
+    #lb-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 20px;
+      transition: background .2s;
+    }
+    #lb-close:hover { background: rgba(255,255,255,.25); }
+
+    /* ─── RSVP ──────────────────────────────────────────────────────── */
+    #rsvp {
+      padding: 88px 0;
+      background: var(--dark2);
+      position: relative;
+      overflow: hidden;
+    }
+    #rsvp::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 360px; height: 360px;
+      background: radial-gradient(circle, rgba(14,170,115,.1), transparent 70%);
+      pointer-events: none;
+    }
+    #rsvp .section-title h2 { color: white; }
+    #rsvp .section-title p  { color: rgba(255,255,255,.45); }
+
+    .rsvp-form-wrap {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      position: relative;
+      z-index: 1;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      font-size: 0.9rem;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      transition: border-color .25s, background .25s;
+      outline: none;
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,.3); }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--green-light);
+      background: rgba(14,170,115,.08);
+    }
+    .form-group select option { background: var(--dark2); }
+
+    /* Attendance toggle */
+    .attend-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .attend-option input[type="radio"] { display: none; }
+    .attend-card {
+      border: 2px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-sm);
+      padding: 18px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all .25s;
+    }
+    .attend-option input:checked + .attend-card {
+      border-color: var(--green-light);
+      background: rgba(14,170,115,.14);
+    }
+    .attend-card .attend-icon { font-size: 26px; margin-bottom: 6px; }
+    .attend-card p { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,.8); }
+    .attend-card small { font-size: 0.72rem; color: rgba(255,255,255,.4); }
+
+    /* Meal options */
+    .meal-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .meal-opt input[type="radio"] { display: none; }
+    .meal-card {
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-sm);
+      padding: 14px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all .25s;
+    }
+    .meal-opt input:checked + .meal-card {
+      border-color: var(--gold-light);
+      background: rgba(201,153,58,.12);
+    }
+    .meal-card .meal-emoji { font-size: 22px; display: block; margin-bottom: 5px; }
+    .meal-card span { font-size: 0.75rem; color: rgba(255,255,255,.7); font-weight: 500; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--green-light);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 16px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background .25s, transform .25s, box-shadow .25s;
+      box-shadow: 0 4px 20px rgba(14,170,115,.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-submit:hover {
+      background: #0c9465;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(14,170,115,.5);
+    }
+
+    /* Success state */
+    #rsvp-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .success-circle {
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      background: rgba(14,170,115,.2);
+      border: 2px solid var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      animation: popIn .5s ease;
+    }
+    @keyframes popIn {
+      0%   { transform: scale(0) rotate(-20deg); opacity: 0; }
+      70%  { transform: scale(1.15) rotate(5deg); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .success-circle .msym { font-size: 44px; color: var(--green-light); }
+    #rsvp-success h3 {
+      font-size: 2rem;
+      color: white;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    #rsvp-success p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .success-badge {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+    }
+    .success-badge p { font-size: 0.83rem; color: rgba(255,255,255,.6); margin-bottom: 4px; }
+    .success-badge strong { color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
+
+    /* ─── FOOTER ────────────────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      padding: 64px 20px 40px;
+      text-align: center;
+    }
+    .footer-names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 600;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .footer-date {
+      font-size: 0.78rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 28px;
+    }
+    .footer-msg {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.45);
+      max-width: 420px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .footer-divider {
+      width: 60px; height: 1px;
+      background: rgba(255,255,255,.08);
+      margin: 0 auto 24px;
+    }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,.2);
+      letter-spacing: .06em;
+    }
+    .footer-hearts { color: var(--gold-light); margin: 0 6px; }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      #nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(253,248,240,.97);
+        padding: 12px 16px 20px;
+        gap: 2px;
+        border-bottom: 1px solid rgba(0,0,0,.06);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { color: var(--muted) !important; padding: 10px 14px; border-radius: var(--radius-sm); }
+      .nav-links a:hover { background: var(--green-pale); color: var(--green) !important; }
+
+      .event-cards { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid .span-2 { grid-column: span 1; }
+      .gallery-item.h-280 img { height: 220px; }
+      .rsvp-form-wrap { padding: 28px 20px; }
+      .attend-toggle { grid-template-columns: 1fr 1fr; }
+      .cnt-item { padding: 0 16px; }
+      .std-card { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-brand">N &amp; A</div>
+    <button id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#save-the-date">Date</a></li>
+      <li><a href="#event-details">Details</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Welcome to</p>
+      <h1 class="hero-names">Nived P <span class="hero-ampersand">&amp;</span> Dr Aishwarya</h1>
+      <p class="hero-tagline">The Beginning of Forever</p>
+      <p class="hero-date">May 9, 2026 &nbsp;·&nbsp; Vellur, Kerala</p>
+      <a href="#save-the-date" class="btn-primary">
+        Get Started
+        <span class="material-symbols-outlined icon">arrow_forward</span>
+      </a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <span class="material-symbols-outlined arrow">keyboard_arrow_down</span>
+    </div>
+  </section>
+
+  <!-- ── SAVE THE DATE ─────────────────────────────────────────────── -->
+  <section id="save-the-date">
+    <div class="container">
+      <div class="std-card reveal">
+        <p class="std-label">✦ Save the Date ✦</p>
+        <p class="std-date">May 9, 2026</p>
+        <div class="countdown-grid">
+          <div class="cnt-item">
+            <span class="cnt-num" id="days">---</span>
+            <span class="cnt-label">Days</span>
+          </div>
+          <div class="cnt-item">
+            <span class="cnt-num" id="hours">--</span>
+            <span class="cnt-label">Hours</span>
+          </div>
+          <div class="cnt-item">
+            <span class="cnt-num" id="mins">--</span>
+            <span class="cnt-label">Minutes</span>
+          </div>
+          <div class="cnt-item">
+            <span class="cnt-num" id="secs">--</span>
+            <span class="cnt-label">Seconds</span>
+          </div>
+        </div>
+        <p class="std-quote">"Whatever our souls are made of, his and mine are the same."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EVENT DETAILS ─────────────────────────────────────────────── -->
+  <section id="event-details">
+    <div class="container">
+      <div class="section-title reveal">
+        <p>Mark your calendar</p>
+        <h2>Event Details</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="event-cards reveal">
+        <div class="event-card">
+          <div class="event-icon green">
+            <span class="material-symbols-outlined">church</span>
+          </div>
+          <p class="event-badge green">The Ceremony</p>
+          <h3>9:00 AM</h3>
+          <div class="event-divider"></div>
+          <p>Vellur Sree Kudakkath Kottanacheri<br/>Devaswom Auditorium, Kerala</p>
+        </div>
+        <div class="event-card">
+          <div class="event-icon gold">
+            <span class="material-symbols-outlined">celebration</span>
+          </div>
+          <p class="event-badge gold">The Reception</p>
+          <h3>12:00 PM</h3>
+          <div class="event-divider"></div>
+          <p>Reception Follows the Ceremony<br/>Vellur, Kerala</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VENUE ─────────────────────────────────────────────────────── -->
+  <section id="venue">
+    <div class="container">
+      <div class="section-title reveal">
+        <p>Find us here</p>
+        <h2>The Venue</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="venue-card reveal">
+        <div class="venue-map-placeholder">
+          <span class="material-symbols-outlined map-pin">location_on</span>
+          <p>Vellur, Kerala, India</p>
+        </div>
+        <div class="venue-body">
+          <h3>Vellur Sree Kudakkath Kottanacheri Devaswom Auditorium</h3>
+          <p class="address">Kottanacheri, Vellur,<br/>Kannur District, Kerala, India</p>
+          <div class="venue-details-row">
+            <div class="venue-tag">
+              <span class="material-symbols-outlined msym">directions_car</span>
+              Free Parking
+            </div>
+            <div class="venue-tag">
+              <span class="material-symbols-outlined msym">directions_bus</span>
+              Shuttle Service
+            </div>
+            <div class="venue-tag">
+              <span class="material-symbols-outlined msym">hotel</span>
+              Rooms Available
+            </div>
+          </div>
+          <button class="btn-map" onclick="window.open('https://search.brave.com/search?q=kottanacheri+auditoriam&view=full&map_src=i&loc_id=loc4YPTZQPI2KAUEAQYIENIUHTKSICWIMZ3CAAAAAAA%3D&bbox=74.683%2C11.911%2C75.732%2C12.402&summary=1&conversation=08d84b915e9a01e4a52583d5c71964348aa3', '_blank')">
+            <span class="material-symbols-outlined" style="font-size:18px;">open_in_new</span>
+            Open in Google Maps
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── GALLERY ───────────────────────────────────────────────────── -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-title reveal">
+        <p>Moments frozen in time</p>
+        <h2>Our Gallery</h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item span-2 h-280 reveal" onclick="openLb('assets/wedding_bg.png','The Ceremony Setting')">
+          <img src="assets/wedding_bg.png" alt="Wedding ceremony setting"/>
+          <div class="gallery-overlay"><p>The Ceremony Setting</p></div>
+          <div class="gallery-zoom"><span class="material-symbols-outlined">zoom_in</span></div>
+        </div>
+        <div class="gallery-item h-200 reveal" onclick="openLb('assets/couple_portrait.png','Nived & Dr Aishwarya')">
+          <img src="assets/couple_portrait.png" alt="Nived and Dr Aishwarya"/>
+          <div class="gallery-overlay"><p>Nived &amp; Dr Aishwarya</p></div>
+          <div class="gallery-zoom"><span class="material-symbols-outlined">zoom_in</span></div>
+        </div>
+        <div class="gallery-item h-200 reveal" onclick="openLb('assets/gallery_photo1.png','In the Garden')">
+          <img src="assets/gallery_photo1.png" alt="In the garden"/>
+          <div class="gallery-overlay"><p>In the Garden</p></div>
+          <div class="gallery-zoom"><span class="material-symbols-outlined">zoom_in</span></div>
+        </div>
+        <div class="gallery-item span-2 h-200 reveal" onclick="openLb('assets/gallery_photo2.png','The Grand Ballroom')">
+          <img src="assets/gallery_photo2.png" alt="The Grand Ballroom"/>
+          <div class="gallery-overlay"><p>The Grand Ballroom</p></div>
+          <div class="gallery-zoom"><span class="material-symbols-outlined">zoom_in</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <img id="lb-img" src="" alt=""/>
+    <button id="lb-close" onclick="closeLb()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+
+  <!-- ── RSVP ──────────────────────────────────────────────────────── -->
+  <section id="rsvp">
+    <div class="container">
+      <div class="section-title reveal">
+        <p>Join us on our special day</p>
+        <h2>RSVP</h2>
+        <div class="gold-line" style="background: linear-gradient(90deg,#0eaa73,#4dd8a7,#0eaa73);"></div>
+      </div>
+      <div class="rsvp-form-wrap reveal">
+
+        <form id="rsvp-form" onsubmit="submitRSVP(event)">
+
+          <!-- Name -->
+          <div class="form-group">
+            <label for="fname">Full Name *</label>
+            <input type="text" id="fname" required placeholder="Your full name"/>
+          </div>
+
+          <!-- Guests -->
+          <div class="form-group">
+            <label for="guests">Number of Guests *</label>
+            <select id="guests" required>
+              <option value="" disabled selected>Select number of guests</option>
+              <option value="1">1 — Just me</option>
+              <option value="2">2 — Myself + 1</option>
+              <option value="3">3 — Myself + 2</option>
+              <option value="4">4 — Myself + 3</option>
+            </select>
+          </div>
+
+          <!-- Attendance -->
+          <div class="form-group">
+            <label>Will you attend? *</label>
+            <div class="attend-toggle">
+              <label class="attend-option">
+                <input type="radio" name="attend" value="yes" required/>
+                <div class="attend-card">
+                  <div class="attend-icon">🥂</div>
+                  <p>Joyfully Accept</p>
+                  <small>I'll be there!</small>
+                </div>
+              </label>
+              <label class="attend-option">
+                <input type="radio" name="attend" value="no"/>
+                <div class="attend-card">
+                  <div class="attend-icon">💌</div>
+                  <p>Regretfully Decline</p>
+                  <small>Can't make it</small>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Meal -->
+          <div class="form-group">
+            <label>Meal Preference</label>
+            <div class="meal-options">
+              <label class="meal-opt">
+                <input type="radio" name="meal" value="standard"/>
+                <div class="meal-card">
+                  <span class="meal-emoji">🍽️</span>
+                  <span>Standard</span>
+                </div>
+              </label>
+              <label class="meal-opt">
+                <input type="radio" name="meal" value="vegetarian"/>
+                <div class="meal-card">
+                  <span class="meal-emoji">🥗</span>
+                  <span>Vegetarian</span>
+                </div>
+              </label>
+              <label class="meal-opt">
+                <input type="radio" name="meal" value="vegan"/>
+                <div class="meal-card">
+                  <span class="meal-emoji">🌱</span>
+                  <span>Vegan</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <span class="material-symbols-outlined" style="font-size:20px;">check_circle</span>
+            Confirm Attendance
+          </button>
+        </form>
+
+        <!-- Success -->
+        <div id="rsvp-success">
+          <div class="success-circle">
+            <span class="material-symbols-outlined msym">favorite</span>
+          </div>
+          <h3>You're Confirmed!</h3>
+          <p>Thank you! We're so excited to celebrate with you.</p>
+          <div class="success-badge">
+            <p>See you on</p>
+            <strong>May 9, 2026 · Vellur, Kerala</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-names">Nived P &amp; Dr Aishwarya</div>
+    <p class="footer-date">May 9, 2026 · Vellur, Kerala</p>
+    <div class="gold-line" style="margin-bottom:28px;"></div>
+    <p class="footer-msg">
+      Thank you for being part of our special day.<br/>
+      We look forward to celebrating with you.
+    </p>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">Made with <span class="footer-hearts">♥</span> for Nived P &amp; Dr Aishwarya's Wedding</p>
+  </footer>
+
+  <!-- ── SCRIPTS ───────────────────────────────────────────────────── -->
+  <script>
+    /* ── Navbar scroll effect ── */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* ── Mobile nav toggle ── */
+    document.getElementById('nav-toggle').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a =>
+      a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'))
+    );
+
+    /* ── Countdown timer ── */
+    const weddingDate = new Date('2026-05-09T09:00:00');
+    function tick() {
+      const diff = weddingDate - Date.now();
+      if (diff <= 0) { ['days','hours','mins','secs'].forEach(id => document.getElementById(id).textContent = '00'); return; }
+      document.getElementById('days').textContent  = String(Math.floor(diff / 86400000)).padStart(3,'0');
+      document.getElementById('hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
+      document.getElementById('mins').textContent  = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+      document.getElementById('secs').textContent  = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+    }
+    tick(); setInterval(tick, 1000);
+
+    /* ── Scroll reveal ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ── Lightbox ── */
+    function openLb(src, caption) {
+      document.getElementById('lb-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLb() { document.getElementById('lightbox').classList.remove('open'); }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLb();
+    });
+
+    /* ── RSVP submit ── */
+    function submitRSVP(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.btn-submit');
+      btn.innerHTML = '<div style="width:20px;height:20px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite;"></div>';
+      btn.disabled = true;
+      setTimeout(() => {
+        document.getElementById('rsvp-form').style.display = 'none';
+        document.getElementById('rsvp-success').style.display = 'block';
+        document.getElementById('rsvp-success').style.animation = 'fadeInUp .6s ease forwards';
+      }, 1400);
+    }
+  </script>
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</body>
+</html>

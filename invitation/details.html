@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Details — Amara & Julian's Wedding</title>
+  <meta name="description" content="Event details for the wedding of Amara & Julian — ceremony, reception, venue and more."/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0eaa73",
+            "accent": "#d4af37",
+            "background-light": "#f6f8f7",
+            "background-dark": "#0a1a15",
+          },
+          fontFamily: {
+            "display": ["Noto Serif", "serif"],
+            "sans": ["Noto Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .glass {
+      background: rgba(14, 170, 115, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .glass-dark {
+      background: rgba(10, 26, 21, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #d4af37 100%);
+    }
+    .gold-text {
+      background: linear-gradient(135deg, #d4af37 0%, #f1d592 50%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bg-couple {
+      background-image: url('assets/wedding_couple.png');
+      background-size: cover;
+      background-position: center top;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim-in { animation: fadeInUp 0.6s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.25s; opacity: 0; }
+    .delay-3 { animation-delay: 0.4s; opacity: 0; }
+    .delay-4 { animation-delay: 0.55s; opacity: 0; }
+    .delay-5 { animation-delay: 0.7s; opacity: 0; }
+    body { min-height: max(884px, 100dvh); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0a1a15; }
+    ::-webkit-scrollbar-thumb { background: #0eaa73; border-radius: 2px; }
+  </style>
+</head>
+<body class="bg-background-dark font-sans text-slate-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-5 py-4 sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+    <a href="index.html" class="flex items-center gap-3 no-underline text-slate-100 hover:opacity-80 transition-opacity">
+      <div class="size-10 rounded-full bg-primary/20 flex items-center justify-center border border-accent/30">
+        <span class="material-symbols-outlined text-accent text-lg" style="font-variation-settings:'FILL' 1;">favorite</span>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold tracking-tight leading-none">A &amp; J</h1>
+        <p class="text-[10px] text-primary uppercase tracking-[0.2em] font-semibold leading-none mt-0.5">Wedding</p>
+      </div>
+    </a>
+    <nav class="flex items-center gap-2">
+      <a href="details.html" class="text-xs text-primary font-semibold px-3 py-1.5 rounded-full bg-primary/15 border border-primary/30">Details</a>
+      <a href="story.html" class="text-xs text-slate-400 hover:text-slate-200 px-3 py-1.5 rounded-full hover:bg-white/5 transition-all">Story</a>
+      <a href="gallery.html" class="text-xs text-slate-400 hover:text-slate-200 px-3 py-1.5 rounded-full hover:bg-white/5 transition-all">Gallery</a>
+      <a href="rsvp.html" class="text-xs text-slate-400 hover:text-slate-200 px-3 py-1.5 rounded-full hover:bg-white/5 transition-all">RSVP</a>
+    </nav>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-4 pb-16 space-y-8">
+
+    <!-- Hero Hero Section with couple image -->
+    <section class="pt-4 anim-in delay-1">
+      <div class="aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-2xl relative group">
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/20 to-transparent z-10"></div>
+        <div class="bg-couple w-full h-full transition-transform duration-700 group-hover:scale-105"></div>
+
+        <!-- Save the Date Glass Card -->
+        <div class="glass absolute bottom-5 left-5 right-5 p-6 rounded-2xl z-20 border-l-4 border-l-accent shadow-xl">
+          <div class="text-center space-y-4">
+            <p class="text-accent font-display italic text-sm tracking-wider">Save the Date</p>
+            <h2 class="text-3xl font-display font-bold tracking-tight">August 24, 2025</h2>
+            <div class="flex justify-center items-center gap-5">
+              <div class="text-center">
+                <span class="block text-2xl font-display font-bold" id="cnt-days">---</span>
+                <span class="text-[10px] uppercase tracking-widest opacity-70">Days</span>
+              </div>
+              <div class="h-10 w-px bg-accent/30"></div>
+              <div class="text-center">
+                <span class="block text-2xl font-display font-bold" id="cnt-hours">--</span>
+                <span class="text-[10px] uppercase tracking-widest opacity-70">Hours</span>
+              </div>
+              <div class="h-10 w-px bg-accent/30"></div>
+              <div class="text-center">
+                <span class="block text-2xl font-display font-bold" id="cnt-mins">--</span>
+                <span class="text-[10px] uppercase tracking-widest opacity-70">Mins</span>
+              </div>
+              <div class="h-10 w-px bg-accent/30"></div>
+              <div class="text-center">
+                <span class="block text-2xl font-display font-bold" id="cnt-secs">--</span>
+                <span class="text-[10px] uppercase tracking-widest opacity-70">Secs</span>
+              </div>
+            </div>
+            <p class="text-xs italic opacity-75 pt-3 border-t border-accent/20">
+              "Whatever our souls are made of, his and mine are the same."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section class="py-2 text-center space-y-6 anim-in delay-2">
+      <div class="inline-block">
+        <span class="material-symbols-outlined text-accent text-3xl mb-1" style="font-variation-settings:'FILL' 1;">auto_awesome</span>
+        <h3 class="text-2xl font-display font-bold">Event Details</h3>
+        <div class="h-0.5 w-12 gold-gradient mx-auto mt-2 rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="glass rounded-2xl p-6 text-center space-y-2 border border-accent/10 hover:border-accent/30 transition-all duration-300">
+          <div class="size-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center mx-auto mb-3">
+            <span class="material-symbols-outlined text-primary text-lg">church</span>
+          </div>
+          <p class="text-accent uppercase tracking-[0.2em] text-[10px] font-bold">The Ceremony</p>
+          <p class="text-lg font-display font-semibold">4:00 PM</p>
+          <p class="text-xs opacity-60 leading-relaxed">Emerald Garden Chapel<br/>Via delle Rose, Tuscany</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center space-y-2 border border-accent/10 hover:border-accent/30 transition-all duration-300">
+          <div class="size-10 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center mx-auto mb-3">
+            <span class="material-symbols-outlined text-accent text-lg">celebration</span>
+          </div>
+          <p class="text-accent uppercase tracking-[0.2em] text-[10px] font-bold">The Reception</p>
+          <p class="text-lg font-display font-semibold">6:00 PM</p>
+          <p class="text-xs opacity-60 leading-relaxed">Grand Manor Ballroom<br/>Piazza della Signoria</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dress Code -->
+    <section class="anim-in delay-3">
+      <div class="glass rounded-2xl p-6 border border-accent/10 flex items-center gap-5">
+        <div class="size-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-accent text-2xl" style="font-variation-settings:'FILL' 1;">diamond</span>
+        </div>
+        <div>
+          <p class="text-accent uppercase tracking-[0.2em] text-[10px] font-bold mb-1">Dress Code</p>
+          <p class="font-display font-semibold text-lg">Black Tie Optional</p>
+          <p class="text-xs opacity-60 mt-1">Formal attire recommended. Colors: Emerald, Ivory &amp; Gold.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guest Information Links -->
+    <section class="anim-in delay-4">
+      <h3 class="text-lg font-display font-bold mb-4 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-xl">info</span>
+        Guest Information
+      </h3>
+      <div class="space-y-3">
+
+        <!-- Venue -->
+        <button onclick="window.open('https://maps.google.com/?q=Tuscany+Italy', '_blank')"
+          class="w-full flex items-center justify-between p-5 bg-primary/5 rounded-2xl border border-accent/15 hover:border-accent/50 hover:bg-primary/10 transition-all duration-300 group">
+          <div class="flex items-center gap-4">
+            <div class="size-11 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/20">
+              <span class="material-symbols-outlined text-primary">map</span>
+            </div>
+            <div class="text-left">
+              <p class="font-semibold text-sm">The Venue</p>
+              <p class="text-xs opacity-55 mt-0.5">The Grand Emerald Manor, Tuscany</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-slate-500 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200">chevron_right</span>
+        </button>
+
+        <!-- Accommodation -->
+        <button
+          class="w-full flex items-center justify-between p-5 bg-primary/5 rounded-2xl border border-accent/15 hover:border-accent/50 hover:bg-primary/10 transition-all duration-300 group">
+          <div class="flex items-center gap-4">
+            <div class="size-11 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/20">
+              <span class="material-symbols-outlined text-primary">hotel</span>
+            </div>
+            <div class="text-left">
+              <p class="font-semibold text-sm">Accommodation</p>
+              <p class="text-xs opacity-55 mt-0.5">Reserved guest rooms at Villa Rosso</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-slate-500 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200">chevron_right</span>
+        </button>
+
+        <!-- Transport -->
+        <button
+          class="w-full flex items-center justify-between p-5 bg-primary/5 rounded-2xl border border-accent/15 hover:border-accent/50 hover:bg-primary/10 transition-all duration-300 group">
+          <div class="flex items-center gap-4">
+            <div class="size-11 rounded-xl bg-primary/20 flex items-center justify-center border border-primary/20">
+              <span class="material-symbols-outlined text-primary">directions_bus</span>
+            </div>
+            <div class="text-left">
+              <p class="font-semibold text-sm">Getting There</p>
+              <p class="text-xs opacity-55 mt-0.5">Shuttle service from Florence Airport</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-slate-500 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200">chevron_right</span>
+        </button>
+
+        <!-- RSVP CTA -->
+        <a href="rsvp.html"
+          class="w-full flex items-center justify-between p-5 bg-primary/20 rounded-2xl border border-primary/40 hover:bg-primary/30 transition-all duration-300 group no-underline text-slate-100">
+          <div class="flex items-center gap-4">
+            <div class="size-11 rounded-xl bg-primary/40 flex items-center justify-center border border-primary/40">
+              <span class="material-symbols-outlined text-white" style="font-variation-settings:'FILL' 1;">mail</span>
+            </div>
+            <div class="text-left">
+              <p class="font-bold text-sm text-white">RSVP Now</p>
+              <p class="text-xs opacity-70 mt-0.5">Kindly respond by July 1st, 2025</p>
+            </div>
+          </div>
+          <span class="material-symbols-outlined text-primary group-hover:translate-x-1 transition-all duration-200">chevron_right</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Navigation Row -->
+    <section class="pb-4 anim-in delay-5">
+      <div class="grid grid-cols-3 gap-3">
+        <a href="story.html" class="glass rounded-2xl p-4 text-center border border-accent/10 hover:border-accent/30 transition-all duration-300 group no-underline text-slate-100">
+          <span class="material-symbols-outlined text-primary text-2xl mb-2 block group-hover:scale-110 transition-transform" style="font-variation-settings:'FILL' 1;">favorite</span>
+          <p class="text-xs font-semibold">Our Story</p>
+        </a>
+        <a href="gallery.html" class="glass rounded-2xl p-4 text-center border border-accent/10 hover:border-accent/30 transition-all duration-300 group no-underline text-slate-100">
+          <span class="material-symbols-outlined text-accent text-2xl mb-2 block group-hover:scale-110 transition-transform" style="font-variation-settings:'FILL' 1;">photo_library</span>
+          <p class="text-xs font-semibold">Gallery</p>
+        </a>
+        <a href="rsvp.html" class="glass rounded-2xl p-4 text-center border border-accent/10 hover:border-accent/30 transition-all duration-300 group no-underline text-slate-100">
+          <span class="material-symbols-outlined text-primary text-2xl mb-2 block group-hover:scale-110 transition-transform" style="font-variation-settings:'FILL' 1;">check_circle</span>
+          <p class="text-xs font-semibold">RSVP</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const weddingDate = new Date('2025-08-24T16:00:00');
+    function updateCountdown() {
+      const diff = weddingDate - new Date();
+      if (diff <= 0) return;
+      document.getElementById('cnt-days').textContent = String(Math.floor(diff / 86400000)).padStart(3, '0');
+      document.getElementById('cnt-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+      document.getElementById('cnt-mins').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      document.getElementById('cnt-secs').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
