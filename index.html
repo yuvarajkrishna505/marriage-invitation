@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nived P & Dr Aishwarya — Wedding Invitation</title>
-  <meta name="description" content="You are joyfully invited to the wedding of Nived P & Dr Aishwarya on May 9, 2026 at Vellur Sree Kudakkath Kottanacheri Devaswom Auditorium, Kerala." />
+  <meta name="description" content="You are joyfully invited to the wedding of Nived P & Dr Aishwarya on May 9, 2026 at Sreelayam Auditorium, Kerala." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -237,27 +237,70 @@
     .btn-primary {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--green-light);
+      gap: 10px;
+      background: linear-gradient(135deg, var(--green-light), #0d9e6e);
       color: white;
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: .12em;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      padding: 14px 32px;
+      padding: 16px 38px;
       border-radius: 50px;
       border: none;
       cursor: pointer;
-      transition: transform .25s, box-shadow .25s, background .25s;
-      box-shadow: 0 4px 24px rgba(14,170,115,.45);
+      transition: all .3s ease;
+      box-shadow: 0 6px 28px rgba(14,170,115,.5);
+      position: relative;
+      overflow: hidden;
     }
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+      transition: left .5s;
+    }
+    .btn-primary:hover::before { left: 100%; }
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(14,170,115,.55);
-      background: #0c9465;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(14,170,115,.65);
+      background: linear-gradient(135deg, #0d9e6e, var(--green-light));
     }
-    .btn-primary .icon { font-size: 18px; transition: transform .25s; }
-    .btn-primary:hover .icon { transform: translateX(3px); }
+    .btn-primary .icon { font-size: 20px; transition: transform .3s ease; }
+    .btn-primary:hover .icon { transform: translateX(4px); }
+
+    .audio-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--green-light);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(14,170,115,.4);
+      transition: all .3s ease;
+      z-index: 999;
+    }
+    .audio-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(14,170,115,.55);
+    }
+    .audio-btn .material-symbols-outlined {
+      color: white;
+      font-size: 22px;
+    }
+    .audio-btn.muted {
+      background: var(--muted);
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    }
 
     .hero-scroll-hint {
       position: absolute;
@@ -365,18 +408,19 @@
       background: var(--cream);
     }
     .event-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: flex;
+      justify-content: center;
     }
     .event-card {
       border-radius: var(--radius);
-      padding: 36px 28px;
+      padding: 36px 48px;
       text-align: center;
       border: 1px solid var(--border);
       background: white;
       box-shadow: 0 4px 20px rgba(0,0,0,.05);
       transition: transform .3s, box-shadow .3s;
+      max-width: 380px;
+      width: 100%;
     }
     .event-card:hover {
       transform: translateY(-4px);
@@ -610,13 +654,25 @@
       border: 1px solid var(--border);
     }
     .gallery-item img {
+      width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       transition: transform .5s ease;
+      display: block;
     }
     .gallery-item:hover img { transform: scale(1.06); }
     .gallery-item.h-200 img { height: 200px; }
     .gallery-item.h-280 img { height: 280px; }
+    .gallery-full {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .gallery-full img {
+      max-height: 400px;
+    }
     .gallery-overlay {
       position: absolute;
       inset: 0;
@@ -994,10 +1050,17 @@
       .nav-links a { color: var(--muted) !important; padding: 10px 14px; border-radius: var(--radius-sm); }
       .nav-links a:hover { background: var(--green-pale); color: var(--green) !important; }
 
-      .event-cards { grid-template-columns: 1fr; }
+      .event-cards { justify-content: center; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-grid .span-2 { grid-column: span 1; }
-      .gallery-item.h-280 img { height: 220px; }
+      .gallery-item img { height: 250px !important; object-fit: cover; }
+      .gallery-full { max-width: 100%; }
+      .gallery-full img { max-height: 300px; }
+      .audio-btn {
+        bottom: 16px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+      }
       .rsvp-form-wrap { padding: 28px 20px; }
       .attend-toggle { grid-template-columns: 1fr 1fr; }
       .cnt-item { padding: 0 16px; }
@@ -1030,12 +1093,16 @@
       <p class="hero-eyebrow">Welcome to</p>
       <h1 class="hero-names">Nived P <span class="hero-ampersand">&amp;</span> Dr Aishwarya</h1>
       <p class="hero-tagline">The Beginning of Forever</p>
-      <p class="hero-date">May 9, 2026 &nbsp;·&nbsp; Vellur, Kerala</p>
-      <a href="#save-the-date" class="btn-primary">
-        Get Started
+      <p class="hero-date">May 9, 2026 &nbsp;·&nbsp; Sreelayam Auditorium, Kerala</p>
+      <a href="#save-the-date" class="btn-primary" onclick="playWeddingMusic(event)">
+        Look More
         <span class="material-symbols-outlined icon">arrow_forward</span>
       </a>
     </div>
+    <audio id="weddingAudio" src="assets/Save the date video  VTPainting003 - VideoTailor.mp3"></audio>
+    <button id="audioToggle" class="audio-btn" onclick="toggleAudio()">
+      <span class="material-symbols-outlined" id="audioIcon">volume_up</span>
+    </button>
     <div class="hero-scroll-hint">
       <span>Scroll</span>
       <span class="material-symbols-outlined arrow">keyboard_arrow_down</span>
@@ -1085,18 +1152,9 @@
             <span class="material-symbols-outlined">church</span>
           </div>
           <p class="event-badge green">The Ceremony</p>
-          <h3>9:00 AM</h3>
+          <h3>11:15 AM – 12:15 PM</h3>
           <div class="event-divider"></div>
-          <p>Vellur Sree Kudakkath Kottanacheri<br/>Devaswom Auditorium, Kerala</p>
-        </div>
-        <div class="event-card">
-          <div class="event-icon gold">
-            <span class="material-symbols-outlined">celebration</span>
-          </div>
-          <p class="event-badge gold">The Reception</p>
-          <h3>12:00 PM</h3>
-          <div class="event-divider"></div>
-          <p>Reception Follows the Ceremony<br/>Vellur, Kerala</p>
+          <p>Sreelayam Auditorium,<br/>Kasaragod, Kerala</p>
         </div>
       </div>
     </div>
@@ -1111,13 +1169,13 @@
         <div class="gold-line"></div>
       </div>
       <div class="venue-card reveal">
-        <div class="venue-map-placeholder">
+        <a href="https://www.google.com/maps/search/Sreelayam+Auditorium+Kasaragod+Kerala" target="_blank" class="venue-map-placeholder">
           <span class="material-symbols-outlined map-pin">location_on</span>
-          <p>Vellur, Kerala, India</p>
-        </div>
+          <p>Sreelayam Auditorium, Kerala, India</p>
+        </a>
         <div class="venue-body">
-          <h3>Vellur Sree Kudakkath Kottanacheri Devaswom Auditorium</h3>
-          <p class="address">Kottanacheri, Vellur,<br/>Kannur District, Kerala, India</p>
+          <h3>Sreelayam Auditorium</h3>
+          <p class="address">Nadakkavu, PO Udinur,<br/>Kasaragod, Kerala, India</p>
           <div class="venue-details-row">
             <div class="venue-tag">
               <span class="material-symbols-outlined msym">directions_car</span>
@@ -1151,24 +1209,19 @@
         <div class="gold-line"></div>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-item span-2 h-280 reveal" onclick="openLb('assets/wedding_bg.png','The Ceremony Setting')">
-          <img src="assets/wedding_bg.png" alt="Wedding ceremony setting"/>
-          <div class="gallery-overlay"><p>The Ceremony Setting</p></div>
+        <div class="gallery-item reveal" onclick="openLb('assets/WhatsApp Image 2026-03-17 at 3.03.43 PM.jpeg','Wedding Photo 1')">
+          <img src="assets/WhatsApp Image 2026-03-17 at 3.03.43 PM.jpeg" alt="Wedding photo 1"/>
+          <div class="gallery-overlay"><p>Wedding Photo</p></div>
           <div class="gallery-zoom"><span class="material-symbols-outlined">zoom_in</span></div>
         </div>
-        <div class="gallery-item h-200 reveal" onclick="openLb('assets/couple_portrait.png','Nived & Dr Aishwarya')">
-          <img src="assets/couple_portrait.png" alt="Nived and Dr Aishwarya"/>
-          <div class="gallery-overlay"><p>Nived &amp; Dr Aishwarya</p></div>
+        <div class="gallery-item reveal" onclick="openLb('assets/WhatsApp Image 2026-03-17 at 3.03.44 PM.jpeg','Wedding Photo 2')">
+          <img src="assets/WhatsApp Image 2026-03-17 at 3.03.44 PM.jpeg" alt="Wedding photo 2"/>
+          <div class="gallery-overlay"><p>Wedding Photo</p></div>
           <div class="gallery-zoom"><span class="material-symbols-outlined">zoom_in</span></div>
         </div>
-        <div class="gallery-item h-200 reveal" onclick="openLb('assets/gallery_photo1.png','In the Garden')">
-          <img src="assets/gallery_photo1.png" alt="In the garden"/>
-          <div class="gallery-overlay"><p>In the Garden</p></div>
-          <div class="gallery-zoom"><span class="material-symbols-outlined">zoom_in</span></div>
-        </div>
-        <div class="gallery-item span-2 h-200 reveal" onclick="openLb('assets/gallery_photo2.png','The Grand Ballroom')">
-          <img src="assets/gallery_photo2.png" alt="The Grand Ballroom"/>
-          <div class="gallery-overlay"><p>The Grand Ballroom</p></div>
+        <div class="gallery-item gallery-full reveal" onclick="openLb('assets/WhatsApp Image 2026-03-17 at 3.03.47 PM.jpeg','Wedding Photo 3')">
+          <img src="assets/WhatsApp Image 2026-03-17 at 3.03.47 PM.jpeg" alt="Wedding photo 3"/>
+          <div class="gallery-overlay"><p>Wedding Photo</p></div>
           <div class="gallery-zoom"><span class="material-symbols-outlined">zoom_in</span></div>
         </div>
       </div>
@@ -1184,40 +1237,10 @@
 
 
 
-  <!-- ── FEEDBACK ─────────────────────────────────────────────────── -->
-  <section id="feedback">
-    <div class="container">
-      <div class="section-title reveal">
-        <p>Words from the heart</p>
-        <h2>Send a Message</h2>
-        <div class="gold-line"></div>
-      </div>
-      <div class="feedback-wrap reveal">
-        <form id="feedback-form" onsubmit="submitFeedback(event)">
-          <div style="margin-bottom:20px;">
-            <label for="feedback-msg">Message to the Couple 💌</label>
-            <textarea id="feedback-msg" rows="6" placeholder="Share your wishes, memories, or words of love..."></textarea>
-          </div>
-          <button type="submit" class="btn-feedback" id="feedback-btn">
-            <span class="material-symbols-outlined" style="font-size:20px;">send</span>
-            Send Feedback
-          </button>
-        </form>
-        <div id="feedback-success">
-          <div class="success-circle">
-            <span class="material-symbols-outlined msym">favorite</span>
-          </div>
-          <h3>Message Sent!</h3>
-          <p>Thank you for your kind words. We cherish every one of them. 💚</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── FOOTER ────────────────────────────────────────────────────── -->
   <footer>
     <div class="footer-names">Nived P &amp; Dr Aishwarya</div>
-    <p class="footer-date">May 9, 2026 · Vellur, Kerala</p>
+    <p class="footer-date">May 9, 2026 · Sreelayam Auditorium, Kerala</p>
     <div class="gold-line" style="margin-bottom:28px;"></div>
     <p class="footer-msg">
       Thank you for being part of our special day.<br/>
@@ -1242,6 +1265,32 @@
     document.querySelectorAll('.nav-links a').forEach(a =>
       a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'))
     );
+
+    /* ── Play wedding music on button click ── */
+    function playWeddingMusic(event) {
+      event.preventDefault();
+      const audio = document.getElementById('weddingAudio');
+      audio.play().catch(() => {});
+      document.querySelector('#save-the-date').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* ── Audio toggle ── */
+    let isPlaying = false;
+    function toggleAudio() {
+      const audio = document.getElementById('weddingAudio');
+      const btn = document.getElementById('audioToggle');
+      const icon = document.getElementById('audioIcon');
+      if (isPlaying) {
+        audio.pause();
+        icon.textContent = 'volume_off';
+        btn.classList.add('muted');
+      } else {
+        audio.play().catch(() => {});
+        icon.textContent = 'volume_up';
+        btn.classList.remove('muted');
+      }
+      isPlaying = !isPlaying;
+    }
 
     /* ── Countdown timer ── */
     const weddingDate = new Date('2026-05-09T09:00:00');
